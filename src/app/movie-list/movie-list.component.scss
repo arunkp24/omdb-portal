@@ -1,0 +1,36 @@
+@import '../../variables.scss';
+
+.movies-list-wrapper {
+    padding: 0 10rem;
+    margin: 1rem 0;
+    .movies-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;    
+    }
+    mat-toolbar {
+        justify-content: center;
+        &.welcome-message {
+            background: $welcome-background;
+        }
+        &.error-message {
+            background: $error-background;
+            color: $error-text;    
+        }
+    }
+    .movie-opened {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media (max-width: 720px) {
+    .movies-list-wrapper {
+        padding: 0 1rem;
+        .movies-list {
+            grid-template-columns: 1fr;
+        }
+        .movie-opened {
+            grid-column: 1;
+        }    
+    }
+}

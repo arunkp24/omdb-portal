@@ -1,0 +1,19 @@
+<mat-card id="{{ movie?.imdbID }}">
+    <div class="movie-wrapper">
+        <div class="poster" [ngStyle]="{backgroundImage: 'url(' + movie?.Poster + ')'}">
+        </div>
+        <div class="movie-details-wrapper">
+            <div class="movie-header">
+                {{ movie?.Title }}
+            </div>
+            <app-movie-details [movieDetails]="movieDetails" *ngIf="movieDetails && selectedMovie == movie?.imdbID && !loading;"></app-movie-details>
+            <div class="spinner" *ngIf="loading && selectedMovie == movie.imdbID">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div class="movie-footer">
+                <div>{{ movie?.Year }}</div>
+                <button *ngIf="selectedMovie != movie?.imdbID" mat-flat-button color="primary" (click)="selectedMovie = movie?.imdbID; getMovieDetails(movie?.imdbID)">DETAILS</button>
+            </div>
+        </div>
+    </div>
+</mat-card>

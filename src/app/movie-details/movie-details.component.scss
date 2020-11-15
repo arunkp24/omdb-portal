@@ -1,0 +1,8 @@
+@import '../../variables.scss';
+
+.movie-content {
+    padding: 0 1rem 1rem 1rem;
+    .movie-actors, .movie-ratings {
+        padding-top: 5px;
+    }
+}

@@ -1,0 +1,19 @@
+<div class="movies-list-wrapper">
+    <div class="movies-list" *ngIf="movies && movies.length; else messageTemplate;">
+        <app-movie-card *ngFor="let movie of movies; let i = index" [movie]="movie" [selectedMovie]="selectedMovie" (callParent)="getSelectedMovie($event)" [ngClass]="{'movie-opened': movie.imdbID == selectedMovie}"></app-movie-card>
+    </div>
+</div>
+
+<ng-template #messageTemplate>
+    <div *ngIf="!movies else errorTemplate">
+        <mat-toolbar class="welcome-message">
+            <span>Welcome to OMDB Search!</span>
+        </mat-toolbar>
+    </div>
+</ng-template>
+
+<ng-template #errorTemplate>
+    <mat-toolbar class="error-message" *ngIf="movies.length == 0">
+        <span>{{ errorMessage }}</span>
+    </mat-toolbar>
+</ng-template>

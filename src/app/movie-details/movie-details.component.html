@@ -1,0 +1,14 @@
+<div class="movie-content">
+    <div class="movie-plot">
+        <strong>Plot:</strong>
+        <div>{{ movieDetails?.Plot }}</div>
+    </div>
+    <div class="movie-actors">
+        <strong>Actors:</strong>
+        <div>{{ movieDetails?.Actors }}</div>
+    </div>
+    <div class="movie-ratings">
+        <strong>Ratings:</strong>
+        <app-movie-ratings [ratings]="movieDetails?.Ratings"></app-movie-ratings>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<mat-toolbar class="navbar-wrapper">
+    <div>OMDB Search</div>
+    <div class="search-wrapper">
+        <mat-form-field>
+            <mat-label>Search a movie</mat-label>
+            <input matInput #searchTerm>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="searchOmdb(searchTerm.value)">SEARCH</button>    
+    </div>
+</mat-toolbar>
